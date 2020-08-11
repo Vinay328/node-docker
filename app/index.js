@@ -1,9 +1,19 @@
+
 const express = require('express');
+const https = require('https');
 const fs = require('fs');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
+
+const key = fs.readFileSync(__dirname + '/keys/my-private.key');
+const cert = fs.readFileSync(__dirname + '/keys/my-certificate.crt');
+const options = {
+    passphrase: "vina",
+    key: key,
+    cert: cert
+};
 
 // Constants
 const PORT = 8080;
@@ -47,8 +57,11 @@ app.post('/validate', (req,res) => {
     } catch (e) {
         console.log(e);
     }
-    res.status(201).json(req.body);
+    res.status(201).json({"allowed": true});
 });
 
-app.listen(PORT);
-console.log(`Running on port ${PORT}`);
+https.createServer(options, app).listen(PORT, () => {
+    console.log("phase3 experiments");
+    console.log("server starting on port : " + PORT);
+});
+
