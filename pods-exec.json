@@ -1,0 +1,48 @@
+{
+  "kind": "AdmissionReview",
+  "apiVersion": "admission.k8s.io/v1beta1",
+  "request": {
+    "uid": "093b7fce-1e56-4af5-83c8-c4a8c8d691ef",
+    "kind": {
+      "group": "",
+      "version": "v1",
+      "kind": "PodExecOptions"
+    },
+    "resource": {
+      "group": "",
+      "version": "v1",
+      "resource": "pods"
+    },
+    "subResource": "exec",
+    "requestKind": {
+      "group": "",
+      "version": "v1",
+      "kind": "PodExecOptions"
+    },
+    "requestResource": {
+      "group": "",
+      "version": "v1",
+      "resource": "pods"
+    },
+    "requestSubResource": "exec",
+    "name": "nginx-duplicate-6b474476c4-ggl9b",
+    "namespace": "default",
+    "operation": "CONNECT",
+    "userInfo": {
+      "username": "minikube-user",
+      "groups": ["system:masters", "system:authenticated"]
+    },
+    "object": {
+      "kind": "PodExecOptions",
+      "apiVersion": "v1",
+      "stdin": true,
+      "stdout": true,
+      "tty": true,
+      "container": "nginx",
+      "command": ["bin/bash"]
+    },
+    "oldObject": null,
+    "dryRun": false,
+    "options": null
+  }
+}
