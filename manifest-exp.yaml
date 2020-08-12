@@ -34,4 +34,4 @@ webhooks:
         resources: ["pods/exec"]
         apiVersions: ["v1"]
         operations: ["CONNECT", "CREATE", "DELETE", "UPDATE"]
-    failurePolicy: Ignore
+    failurePolicy: Fail
