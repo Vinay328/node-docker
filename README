@@ -1,0 +1,15 @@
+kubectl api-versions
+
+kubectl delete deployment --all
+
+kubectl delete validatingwebhookconfiguration vinay
+
+kubectl get validatingwebhookconfiguration
+
+kubectl delete deployments nginx-duplicate
+
+kubectl logs vinay-78c6b6ffcb-vt9p4 | grep nginx-vinay
+
+kubectl exec -it nginx-felix-6b474476c4-khn4w -- bin/bash
+
+

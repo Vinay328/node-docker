@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: vinay
-          image: vinay328/nodedocker:latest
+          image: vinay328/nodedocker:1.0.0
           ports:
             - containerPort: 8080

@@ -51,7 +51,7 @@ function validate(body) {
     let errorObject = null;
     if (body.request.object.kind == "PodExecOptions") {
         errorObject = {
-            "apiVersion": "admission.k8s.io/v1beta1",
+            "apiVersion": "admission.k8s.io/v1",
             "kind": "AdmissionReview",
             "response": {
                 "uid": body.request.uid,
@@ -63,12 +63,25 @@ function validate(body) {
             }
         }
 
+    } else if (body.request.operation == "CREATE" && body.request.object.kind == "Deployment" && body.request.object.spec.replicas < 2) {
+        errorObject = {
+            "apiVersion": "admission.k8s.io/v1",
+            "kind": "AdmissionReview",
+            "response": {
+                "uid": body.request.uid,
+                "allowed": false,
+                "status": {
+                    "code": 400,
+                    "message": "Bad request - every pod should at least 2 replicas"
+                }
+            }
+        }
     }
     return errorObject;
 }
 
 app.post('/validate', (req, res) => {
-    console.log("VALIDATE REQUEST CALLED");
+    console.log("VALIDATE REQUEST CALLED " + new Date().toString());
     res.set('Content-Type', 'application/json')
     let errorObject;
     try {
@@ -81,7 +94,7 @@ app.post('/validate', (req, res) => {
         res.status(200).json(errorObject);
     } else {
         res.status(200).json({
-            "apiVersion": "admission.k8s.io/v1beta1",
+            "apiVersion": "admission.k8s.io/v1",
             "kind": "AdmissionReview",
             "response": {
                 "uid": req.body.request.uid,
@@ -92,7 +105,7 @@ app.post('/validate', (req, res) => {
 });
 
 https.createServer(options, app).listen(PORT, () => {
-    console.log("phase5.1 proper code experiments");
+    console.log("phase final proper code experiments");
     console.log("server starting on port : " + PORT);
 });
 

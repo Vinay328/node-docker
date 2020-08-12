@@ -1,0 +1,2345 @@
+[{
+  "kind": "AdmissionReview",
+  "apiVersion": "admission.k8s.io/v1",
+  "request": {
+    "uid": "469b4fb7-7be0-4258-bc65-a8ed139b945c",
+    "kind": {
+      "group": "apps",
+      "version": "v1",
+      "kind": "Deployment"
+    },
+    "resource": {
+      "group": "apps",
+      "version": "v1",
+      "resource": "deployments"
+    },
+    "requestKind": {
+      "group": "apps",
+      "version": "v1",
+      "kind": "Deployment"
+    },
+    "requestResource": {
+      "group": "apps",
+      "version": "v1",
+      "resource": "deployments"
+    },
+    "name": "nginx-felix",
+    "namespace": "default",
+    "operation": "CREATE",
+    "userInfo": {
+      "username": "minikube-user",
+      "groups": ["system:masters", "system:authenticated"]
+    },
+    "object": {
+      "kind": "Deployment",
+      "apiVersion": "apps/v1",
+      "metadata": {
+        "name": "nginx-felix",
+        "namespace": "default",
+        "uid": "e69a4a25-0f19-462b-b933-6348796c9b4a",
+        "generation": 1,
+        "creationTimestamp": "2020-08-12T13:07:48Z",
+        "labels": {
+          "app": "nginx"
+        },
+        "annotations": {
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"nginx\"},\"name\":\"nginx-felix\",\"namespace\":\"default\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"nginx\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"nginx\"}},\"spec\":{\"containers\":[{\"image\":\"nginx:1.14.2\",\"name\":\"nginx\",\"ports\":[{\"containerPort\":80}]}]}}}}\n"
+        },
+        "managedFields": [{
+          "manager": "kubectl",
+          "operation": "Update",
+          "apiVersion": "apps/v1",
+          "time": "2020-08-12T13:07:48Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                ".": {},
+                "f:kubectl.kubernetes.io/last-applied-configuration": {}
+              },
+              "f:labels": {
+                ".": {},
+                "f:app": {}
+              }
+            },
+            "f:spec": {
+              "f:progressDeadlineSeconds": {},
+              "f:replicas": {},
+              "f:revisionHistoryLimit": {},
+              "f:selector": {
+                "f:matchLabels": {
+                  ".": {},
+                  "f:app": {}
+                }
+              },
+              "f:strategy": {
+                "f:rollingUpdate": {
+                  ".": {},
+                  "f:maxSurge": {},
+                  "f:maxUnavailable": {}
+                },
+                "f:type": {}
+              },
+              "f:template": {
+                "f:metadata": {
+                  "f:labels": {
+                    ".": {},
+                    "f:app": {}
+                  }
+                },
+                "f:spec": {
+                  "f:containers": {
+                    "k:{\"name\":\"nginx\"}": {
+                      ".": {},
+                      "f:image": {},
+                      "f:imagePullPolicy": {},
+                      "f:name": {},
+                      "f:ports": {
+                        ".": {},
+                        "k:{\"containerPort\":80,\"protocol\":\"TCP\"}": {
+                          ".": {},
+                          "f:containerPort": {},
+                          "f:protocol": {}
+                        }
+                      },
+                      "f:resources": {},
+                      "f:terminationMessagePath": {},
+                      "f:terminationMessagePolicy": {}
+                    }
+                  },
+                  "f:dnsPolicy": {},
+                  "f:restartPolicy": {},
+                  "f:schedulerName": {},
+                  "f:securityContext": {},
+                  "f:terminationGracePeriodSeconds": {}
+                }
+              }
+            }
+          }
+        }]
+      },
+      "spec": {
+        "replicas": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "nginx"
+          }
+        },
+        "template": {
+          "metadata": {
+            "creationTimestamp": null,
+            "labels": {
+              "app": "nginx"
+            }
+          },
+          "spec": {
+            "containers": [{
+              "name": "nginx",
+              "image": "nginx:1.14.2",
+              "ports": [{
+                "containerPort": 80,
+                "protocol": "TCP"
+              }],
+              "resources": {},
+              "terminationMessagePath": "/dev/termination-log",
+              "terminationMessagePolicy": "File",
+              "imagePullPolicy": "IfNotPresent"
+            }],
+            "restartPolicy": "Always",
+            "terminationGracePeriodSeconds": 30,
+            "dnsPolicy": "ClusterFirst",
+            "securityContext": {},
+            "schedulerName": "default-scheduler"
+          }
+        },
+        "strategy": {
+          "type": "RollingUpdate",
+          "rollingUpdate": {
+            "maxUnavailable": "25%",
+            "maxSurge": "25%"
+          }
+        },
+        "revisionHistoryLimit": 10,
+        "progressDeadlineSeconds": 600
+      },
+      "status": {}
+    },
+    "oldObject": null,
+    "dryRun": false,
+    "options": {
+      "kind": "CreateOptions",
+      "apiVersion": "meta.k8s.io/v1"
+    }
+  }
+}, {
+  "kind": "AdmissionReview",
+  "apiVersion": "admission.k8s.io/v1",
+  "request": {
+    "uid": "eecd8816-6ac5-4820-8df6-634014d5fca9",
+    "kind": {
+      "group": "apps",
+      "version": "v1",
+      "kind": "Deployment"
+    },
+    "resource": {
+      "group": "apps",
+      "version": "v1",
+      "resource": "deployments"
+    },
+    "subResource": "status",
+    "requestKind": {
+      "group": "apps",
+      "version": "v1",
+      "kind": "Deployment"
+    },
+    "requestResource": {
+      "group": "apps",
+      "version": "v1",
+      "resource": "deployments"
+    },
+    "requestSubResource": "status",
+    "name": "nginx-felix",
+    "namespace": "default",
+    "operation": "UPDATE",
+    "userInfo": {
+      "username": "system:serviceaccount:kube-system:deployment-controller",
+      "uid": "06b6b99f-439a-461e-8578-23220e10b57a",
+      "groups": ["system:serviceaccounts", "system:serviceaccounts:kube-system", "system:authenticated"]
+    },
+    "object": {
+      "kind": "Deployment",
+      "apiVersion": "apps/v1",
+      "metadata": {
+        "name": "nginx-felix",
+        "namespace": "default",
+        "selfLink": "/apis/apps/v1/namespaces/default/deployments/nginx-felix",
+        "uid": "e69a4a25-0f19-462b-b933-6348796c9b4a",
+        "resourceVersion": "153563",
+        "generation": 1,
+        "creationTimestamp": "2020-08-12T13:07:48Z",
+        "labels": {
+          "app": "nginx"
+        },
+        "annotations": {
+          "deployment.kubernetes.io/revision": "1",
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"nginx\"},\"name\":\"nginx-felix\",\"namespace\":\"default\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"nginx\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"nginx\"}},\"spec\":{\"containers\":[{\"image\":\"nginx:1.14.2\",\"name\":\"nginx\",\"ports\":[{\"containerPort\":80}]}]}}}}\n"
+        },
+        "managedFields": [{
+          "manager": "kube-controller-manager",
+          "operation": "Update",
+          "apiVersion": "apps/v1",
+          "time": "2020-08-12T13:07:48Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                "f:deployment.kubernetes.io/revision": {}
+              }
+            },
+            "f:status": {
+              "f:conditions": {
+                ".": {},
+                "k:{\"type\":\"Progressing\"}": {
+                  ".": {},
+                  "f:lastTransitionTime": {},
+                  "f:lastUpdateTime": {},
+                  "f:message": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                }
+              }
+            }
+          }
+        }, {
+          "manager": "kubectl",
+          "operation": "Update",
+          "apiVersion": "apps/v1",
+          "time": "2020-08-12T13:07:48Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                ".": {},
+                "f:kubectl.kubernetes.io/last-applied-configuration": {}
+              },
+              "f:labels": {
+                ".": {},
+                "f:app": {}
+              }
+            },
+            "f:spec": {
+              "f:progressDeadlineSeconds": {},
+              "f:replicas": {},
+              "f:revisionHistoryLimit": {},
+              "f:selector": {
+                "f:matchLabels": {
+                  ".": {},
+                  "f:app": {}
+                }
+              },
+              "f:strategy": {
+                "f:rollingUpdate": {
+                  ".": {},
+                  "f:maxSurge": {},
+                  "f:maxUnavailable": {}
+                },
+                "f:type": {}
+              },
+              "f:template": {
+                "f:metadata": {
+                  "f:labels": {
+                    ".": {},
+                    "f:app": {}
+                  }
+                },
+                "f:spec": {
+                  "f:containers": {
+                    "k:{\"name\":\"nginx\"}": {
+                      ".": {},
+                      "f:image": {},
+                      "f:imagePullPolicy": {},
+                      "f:name": {},
+                      "f:ports": {
+                        ".": {},
+                        "k:{\"containerPort\":80,\"protocol\":\"TCP\"}": {
+                          ".": {},
+                          "f:containerPort": {},
+                          "f:protocol": {}
+                        }
+                      },
+                      "f:resources": {},
+                      "f:terminationMessagePath": {},
+                      "f:terminationMessagePolicy": {}
+                    }
+                  },
+                  "f:dnsPolicy": {},
+                  "f:restartPolicy": {},
+                  "f:schedulerName": {},
+                  "f:securityContext": {},
+                  "f:terminationGracePeriodSeconds": {}
+                }
+              }
+            }
+          }
+        }]
+      },
+      "spec": {
+        "replicas": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "nginx"
+          }
+        },
+        "template": {
+          "metadata": {
+            "creationTimestamp": null,
+            "labels": {
+              "app": "nginx"
+            }
+          },
+          "spec": {
+            "containers": [{
+              "name": "nginx",
+              "image": "nginx:1.14.2",
+              "ports": [{
+                "containerPort": 80,
+                "protocol": "TCP"
+              }],
+              "resources": {},
+              "terminationMessagePath": "/dev/termination-log",
+              "terminationMessagePolicy": "File",
+              "imagePullPolicy": "IfNotPresent"
+            }],
+            "restartPolicy": "Always",
+            "terminationGracePeriodSeconds": 30,
+            "dnsPolicy": "ClusterFirst",
+            "securityContext": {},
+            "schedulerName": "default-scheduler"
+          }
+        },
+        "strategy": {
+          "type": "RollingUpdate",
+          "rollingUpdate": {
+            "maxUnavailable": "25%",
+            "maxSurge": "25%"
+          }
+        },
+        "revisionHistoryLimit": 10,
+        "progressDeadlineSeconds": 600
+      },
+      "status": {
+        "conditions": [{
+          "type": "Progressing",
+          "status": "True",
+          "lastUpdateTime": "2020-08-12T13:07:48Z",
+          "lastTransitionTime": "2020-08-12T13:07:48Z",
+          "reason": "NewReplicaSetCreated",
+          "message": "Created new replica set \"nginx-felix-6b474476c4\""
+        }]
+      }
+    },
+    "oldObject": {
+      "kind": "Deployment",
+      "apiVersion": "apps/v1",
+      "metadata": {
+        "name": "nginx-felix",
+        "namespace": "default",
+        "uid": "e69a4a25-0f19-462b-b933-6348796c9b4a",
+        "resourceVersion": "153563",
+        "generation": 1,
+        "creationTimestamp": "2020-08-12T13:07:48Z",
+        "labels": {
+          "app": "nginx"
+        },
+        "annotations": {
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"nginx\"},\"name\":\"nginx-felix\",\"namespace\":\"default\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"nginx\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"nginx\"}},\"spec\":{\"containers\":[{\"image\":\"nginx:1.14.2\",\"name\":\"nginx\",\"ports\":[{\"containerPort\":80}]}]}}}}\n"
+        }
+      },
+      "spec": {
+        "replicas": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "nginx"
+          }
+        },
+        "template": {
+          "metadata": {
+            "creationTimestamp": null,
+            "labels": {
+              "app": "nginx"
+            }
+          },
+          "spec": {
+            "containers": [{
+              "name": "nginx",
+              "image": "nginx:1.14.2",
+              "ports": [{
+                "containerPort": 80,
+                "protocol": "TCP"
+              }],
+              "resources": {},
+              "terminationMessagePath": "/dev/termination-log",
+              "terminationMessagePolicy": "File",
+              "imagePullPolicy": "IfNotPresent"
+            }],
+            "restartPolicy": "Always",
+            "terminationGracePeriodSeconds": 30,
+            "dnsPolicy": "ClusterFirst",
+            "securityContext": {},
+            "schedulerName": "default-scheduler"
+          }
+        },
+        "strategy": {
+          "type": "RollingUpdate",
+          "rollingUpdate": {
+            "maxUnavailable": "25%",
+            "maxSurge": "25%"
+          }
+        },
+        "revisionHistoryLimit": 10,
+        "progressDeadlineSeconds": 600
+      },
+      "status": {}
+    },
+    "dryRun": false,
+    "options": {
+      "kind": "UpdateOptions",
+      "apiVersion": "meta.k8s.io/v1"
+    }
+  }
+}, {
+  "kind": "AdmissionReview",
+  "apiVersion": "admission.k8s.io/v1",
+  "request": {
+    "uid": "a0e09d8f-3590-4240-858e-40988f6e2b05",
+    "kind": {
+      "group": "",
+      "version": "v1",
+      "kind": "Pod"
+    },
+    "resource": {
+      "group": "",
+      "version": "v1",
+      "resource": "pods"
+    },
+    "requestKind": {
+      "group": "",
+      "version": "v1",
+      "kind": "Pod"
+    },
+    "requestResource": {
+      "group": "",
+      "version": "v1",
+      "resource": "pods"
+    },
+    "name": "nginx-felix-6b474476c4-khn4w",
+    "namespace": "default",
+    "operation": "CREATE",
+    "userInfo": {
+      "username": "system:serviceaccount:kube-system:replicaset-controller",
+      "uid": "beb4e65a-4d77-4f63-ac54-7a2476a80082",
+      "groups": ["system:serviceaccounts", "system:serviceaccounts:kube-system", "system:authenticated"]
+    },
+    "object": {
+      "kind": "Pod",
+      "apiVersion": "v1",
+      "metadata": {
+        "name": "nginx-felix-6b474476c4-khn4w",
+        "generateName": "nginx-felix-6b474476c4-",
+        "namespace": "default",
+        "uid": "b12ebf5c-7cb7-49bd-9029-f2d784873b46",
+        "creationTimestamp": "2020-08-12T13:07:48Z",
+        "labels": {
+          "app": "nginx",
+          "pod-template-hash": "6b474476c4"
+        },
+        "ownerReferences": [{
+          "apiVersion": "apps/v1",
+          "kind": "ReplicaSet",
+          "name": "nginx-felix-6b474476c4",
+          "uid": "91877a24-d8b2-4ef1-b08d-124f9b5544d8",
+          "controller": true,
+          "blockOwnerDeletion": true
+        }],
+        "managedFields": [{
+          "manager": "kube-controller-manager",
+          "operation": "Update",
+          "apiVersion": "v1",
+          "time": "2020-08-12T13:07:48Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:generateName": {},
+              "f:labels": {
+                ".": {},
+                "f:app": {},
+                "f:pod-template-hash": {}
+              },
+              "f:ownerReferences": {
+                ".": {},
+                "k:{\"uid\":\"91877a24-d8b2-4ef1-b08d-124f9b5544d8\"}": {
+                  ".": {},
+                  "f:apiVersion": {},
+                  "f:blockOwnerDeletion": {},
+                  "f:controller": {},
+                  "f:kind": {},
+                  "f:name": {},
+                  "f:uid": {}
+                }
+              }
+            },
+            "f:spec": {
+              "f:containers": {
+                "k:{\"name\":\"nginx\"}": {
+                  ".": {},
+                  "f:image": {},
+                  "f:imagePullPolicy": {},
+                  "f:name": {},
+                  "f:ports": {
+                    ".": {},
+                    "k:{\"containerPort\":80,\"protocol\":\"TCP\"}": {
+                      ".": {},
+                      "f:containerPort": {},
+                      "f:protocol": {}
+                    }
+                  },
+                  "f:resources": {},
+                  "f:terminationMessagePath": {},
+                  "f:terminationMessagePolicy": {}
+                }
+              },
+              "f:dnsPolicy": {},
+              "f:enableServiceLinks": {},
+              "f:restartPolicy": {},
+              "f:schedulerName": {},
+              "f:securityContext": {},
+              "f:terminationGracePeriodSeconds": {}
+            }
+          }
+        }]
+      },
+      "spec": {
+        "volumes": [{
+          "name": "default-token-cwz2h",
+          "secret": {
+            "secretName": "default-token-cwz2h"
+          }
+        }],
+        "containers": [{
+          "name": "nginx",
+          "image": "nginx:1.14.2",
+          "ports": [{
+            "containerPort": 80,
+            "protocol": "TCP"
+          }],
+          "resources": {},
+          "volumeMounts": [{
+            "name": "default-token-cwz2h",
+            "readOnly": true,
+            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+          }],
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File",
+          "imagePullPolicy": "IfNotPresent"
+        }],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst",
+        "serviceAccountName": "default",
+        "serviceAccount": "default",
+        "securityContext": {},
+        "schedulerName": "default-scheduler",
+        "tolerations": [{
+          "key": "node.kubernetes.io/not-ready",
+          "operator": "Exists",
+          "effect": "NoExecute",
+          "tolerationSeconds": 300
+        }, {
+          "key": "node.kubernetes.io/unreachable",
+          "operator": "Exists",
+          "effect": "NoExecute",
+          "tolerationSeconds": 300
+        }],
+        "priority": 0,
+        "enableServiceLinks": true
+      },
+      "status": {
+        "phase": "Pending",
+        "qosClass": "BestEffort"
+      }
+    },
+    "oldObject": null,
+    "dryRun": false,
+    "options": {
+      "kind": "CreateOptions",
+      "apiVersion": "meta.k8s.io/v1"
+    }
+  }
+}, {
+  "kind": "AdmissionReview",
+  "apiVersion": "admission.k8s.io/v1",
+  "request": {
+    "uid": "f819215c-921a-4dd3-9ea6-a35802156749",
+    "kind": {
+      "group": "apps",
+      "version": "v1",
+      "kind": "Deployment"
+    },
+    "resource": {
+      "group": "apps",
+      "version": "v1",
+      "resource": "deployments"
+    },
+    "subResource": "status",
+    "requestKind": {
+      "group": "apps",
+      "version": "v1",
+      "kind": "Deployment"
+    },
+    "requestResource": {
+      "group": "apps",
+      "version": "v1",
+      "resource": "deployments"
+    },
+    "requestSubResource": "status",
+    "name": "nginx-felix",
+    "namespace": "default",
+    "operation": "UPDATE",
+    "userInfo": {
+      "username": "system:serviceaccount:kube-system:deployment-controller",
+      "uid": "06b6b99f-439a-461e-8578-23220e10b57a",
+      "groups": ["system:serviceaccounts", "system:serviceaccounts:kube-system", "system:authenticated"]
+    },
+    "object": {
+      "kind": "Deployment",
+      "apiVersion": "apps/v1",
+      "metadata": {
+        "name": "nginx-felix",
+        "namespace": "default",
+        "selfLink": "/apis/apps/v1/namespaces/default/deployments/nginx-felix",
+        "uid": "e69a4a25-0f19-462b-b933-6348796c9b4a",
+        "resourceVersion": "153565",
+        "generation": 1,
+        "creationTimestamp": "2020-08-12T13:07:48Z",
+        "labels": {
+          "app": "nginx"
+        },
+        "annotations": {
+          "deployment.kubernetes.io/revision": "1",
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"nginx\"},\"name\":\"nginx-felix\",\"namespace\":\"default\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"nginx\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"nginx\"}},\"spec\":{\"containers\":[{\"image\":\"nginx:1.14.2\",\"name\":\"nginx\",\"ports\":[{\"containerPort\":80}]}]}}}}\n"
+        },
+        "managedFields": [{
+          "manager": "kube-controller-manager",
+          "operation": "Update",
+          "apiVersion": "apps/v1",
+          "time": "2020-08-12T13:07:48Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                "f:deployment.kubernetes.io/revision": {}
+              }
+            },
+            "f:status": {
+              "f:conditions": {
+                ".": {},
+                "k:{\"type\":\"Available\"}": {
+                  ".": {},
+                  "f:lastTransitionTime": {},
+                  "f:lastUpdateTime": {},
+                  "f:message": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Progressing\"}": {
+                  ".": {},
+                  "f:lastTransitionTime": {},
+                  "f:lastUpdateTime": {},
+                  "f:message": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                }
+              },
+              "f:observedGeneration": {},
+              "f:unavailableReplicas": {}
+            }
+          }
+        }, {
+          "manager": "kubectl",
+          "operation": "Update",
+          "apiVersion": "apps/v1",
+          "time": "2020-08-12T13:07:48Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                ".": {},
+                "f:kubectl.kubernetes.io/last-applied-configuration": {}
+              },
+              "f:labels": {
+                ".": {},
+                "f:app": {}
+              }
+            },
+            "f:spec": {
+              "f:progressDeadlineSeconds": {},
+              "f:replicas": {},
+              "f:revisionHistoryLimit": {},
+              "f:selector": {
+                "f:matchLabels": {
+                  ".": {},
+                  "f:app": {}
+                }
+              },
+              "f:strategy": {
+                "f:rollingUpdate": {
+                  ".": {},
+                  "f:maxSurge": {},
+                  "f:maxUnavailable": {}
+                },
+                "f:type": {}
+              },
+              "f:template": {
+                "f:metadata": {
+                  "f:labels": {
+                    ".": {},
+                    "f:app": {}
+                  }
+                },
+                "f:spec": {
+                  "f:containers": {
+                    "k:{\"name\":\"nginx\"}": {
+                      ".": {},
+                      "f:image": {},
+                      "f:imagePullPolicy": {},
+                      "f:name": {},
+                      "f:ports": {
+                        ".": {},
+                        "k:{\"containerPort\":80,\"protocol\":\"TCP\"}": {
+                          ".": {},
+                          "f:containerPort": {},
+                          "f:protocol": {}
+                        }
+                      },
+                      "f:resources": {},
+                      "f:terminationMessagePath": {},
+                      "f:terminationMessagePolicy": {}
+                    }
+                  },
+                  "f:dnsPolicy": {},
+                  "f:restartPolicy": {},
+                  "f:schedulerName": {},
+                  "f:securityContext": {},
+                  "f:terminationGracePeriodSeconds": {}
+                }
+              }
+            }
+          }
+        }]
+      },
+      "spec": {
+        "replicas": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "nginx"
+          }
+        },
+        "template": {
+          "metadata": {
+            "creationTimestamp": null,
+            "labels": {
+              "app": "nginx"
+            }
+          },
+          "spec": {
+            "containers": [{
+              "name": "nginx",
+              "image": "nginx:1.14.2",
+              "ports": [{
+                "containerPort": 80,
+                "protocol": "TCP"
+              }],
+              "resources": {},
+              "terminationMessagePath": "/dev/termination-log",
+              "terminationMessagePolicy": "File",
+              "imagePullPolicy": "IfNotPresent"
+            }],
+            "restartPolicy": "Always",
+            "terminationGracePeriodSeconds": 30,
+            "dnsPolicy": "ClusterFirst",
+            "securityContext": {},
+            "schedulerName": "default-scheduler"
+          }
+        },
+        "strategy": {
+          "type": "RollingUpdate",
+          "rollingUpdate": {
+            "maxUnavailable": "25%",
+            "maxSurge": "25%"
+          }
+        },
+        "revisionHistoryLimit": 10,
+        "progressDeadlineSeconds": 600
+      },
+      "status": {
+        "observedGeneration": 1,
+        "unavailableReplicas": 1,
+        "conditions": [{
+          "type": "Progressing",
+          "status": "True",
+          "lastUpdateTime": "2020-08-12T13:07:48Z",
+          "lastTransitionTime": "2020-08-12T13:07:48Z",
+          "reason": "NewReplicaSetCreated",
+          "message": "Created new replica set \"nginx-felix-6b474476c4\""
+        }, {
+          "type": "Available",
+          "status": "False",
+          "lastUpdateTime": "2020-08-12T13:07:48Z",
+          "lastTransitionTime": "2020-08-12T13:07:48Z",
+          "reason": "MinimumReplicasUnavailable",
+          "message": "Deployment does not have minimum availability."
+        }]
+      }
+    },
+    "oldObject": {
+      "kind": "Deployment",
+      "apiVersion": "apps/v1",
+      "metadata": {
+        "name": "nginx-felix",
+        "namespace": "default",
+        "uid": "e69a4a25-0f19-462b-b933-6348796c9b4a",
+        "resourceVersion": "153565",
+        "generation": 1,
+        "creationTimestamp": "2020-08-12T13:07:48Z",
+        "labels": {
+          "app": "nginx"
+        },
+        "annotations": {
+          "deployment.kubernetes.io/revision": "1",
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"nginx\"},\"name\":\"nginx-felix\",\"namespace\":\"default\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"nginx\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"nginx\"}},\"spec\":{\"containers\":[{\"image\":\"nginx:1.14.2\",\"name\":\"nginx\",\"ports\":[{\"containerPort\":80}]}]}}}}\n"
+        }
+      },
+      "spec": {
+        "replicas": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "nginx"
+          }
+        },
+        "template": {
+          "metadata": {
+            "creationTimestamp": null,
+            "labels": {
+              "app": "nginx"
+            }
+          },
+          "spec": {
+            "containers": [{
+              "name": "nginx",
+              "image": "nginx:1.14.2",
+              "ports": [{
+                "containerPort": 80,
+                "protocol": "TCP"
+              }],
+              "resources": {},
+              "terminationMessagePath": "/dev/termination-log",
+              "terminationMessagePolicy": "File",
+              "imagePullPolicy": "IfNotPresent"
+            }],
+            "restartPolicy": "Always",
+            "terminationGracePeriodSeconds": 30,
+            "dnsPolicy": "ClusterFirst",
+            "securityContext": {},
+            "schedulerName": "default-scheduler"
+          }
+        },
+        "strategy": {
+          "type": "RollingUpdate",
+          "rollingUpdate": {
+            "maxUnavailable": "25%",
+            "maxSurge": "25%"
+          }
+        },
+        "revisionHistoryLimit": 10,
+        "progressDeadlineSeconds": 600
+      },
+      "status": {
+        "conditions": [{
+          "type": "Progressing",
+          "status": "True",
+          "lastUpdateTime": "2020-08-12T13:07:48Z",
+          "lastTransitionTime": "2020-08-12T13:07:48Z",
+          "reason": "NewReplicaSetCreated",
+          "message": "Created new replica set \"nginx-felix-6b474476c4\""
+        }]
+      }
+    },
+    "dryRun": false,
+    "options": {
+      "kind": "UpdateOptions",
+      "apiVersion": "meta.k8s.io/v1"
+    }
+  }
+}, {
+  "kind": "AdmissionReview",
+  "apiVersion": "admission.k8s.io/v1",
+  "request": {
+    "uid": "29b1ca94-6877-4424-b946-7b6e1b3c813c",
+    "kind": {
+      "group": "",
+      "version": "v1",
+      "kind": "Binding"
+    },
+    "resource": {
+      "group": "",
+      "version": "v1",
+      "resource": "pods"
+    },
+    "subResource": "binding",
+    "requestKind": {
+      "group": "",
+      "version": "v1",
+      "kind": "Binding"
+    },
+    "requestResource": {
+      "group": "",
+      "version": "v1",
+      "resource": "pods"
+    },
+    "requestSubResource": "binding",
+    "name": "nginx-felix-6b474476c4-khn4w",
+    "namespace": "default",
+    "operation": "CREATE",
+    "userInfo": {
+      "username": "system:kube-scheduler",
+      "groups": ["system:authenticated"]
+    },
+    "object": {
+      "kind": "Binding",
+      "apiVersion": "v1",
+      "metadata": {
+        "name": "nginx-felix-6b474476c4-khn4w",
+        "namespace": "default",
+        "uid": "b12ebf5c-7cb7-49bd-9029-f2d784873b46",
+        "creationTimestamp": null,
+        "managedFields": [{
+          "manager": "kube-scheduler",
+          "operation": "Update",
+          "apiVersion": "v1",
+          "time": "2020-08-12T13:07:48Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:target": {
+              "f:kind": {},
+              "f:name": {}
+            }
+          }
+        }]
+      },
+      "target": {
+        "kind": "Node",
+        "name": "minikube"
+      }
+    },
+    "oldObject": null,
+    "dryRun": false,
+    "options": {
+      "kind": "CreateOptions",
+      "apiVersion": "meta.k8s.io/v1"
+    }
+  }
+}, {
+  "kind": "AdmissionReview",
+  "apiVersion": "admission.k8s.io/v1",
+  "request": {
+    "uid": "b446ca5c-9c23-420f-a803-64d8f6680765",
+    "kind": {
+      "group": "apps",
+      "version": "v1",
+      "kind": "Deployment"
+    },
+    "resource": {
+      "group": "apps",
+      "version": "v1",
+      "resource": "deployments"
+    },
+    "subResource": "status",
+    "requestKind": {
+      "group": "apps",
+      "version": "v1",
+      "kind": "Deployment"
+    },
+    "requestResource": {
+      "group": "apps",
+      "version": "v1",
+      "resource": "deployments"
+    },
+    "requestSubResource": "status",
+    "name": "nginx-felix",
+    "namespace": "default",
+    "operation": "UPDATE",
+    "userInfo": {
+      "username": "system:serviceaccount:kube-system:deployment-controller",
+      "uid": "06b6b99f-439a-461e-8578-23220e10b57a",
+      "groups": ["system:serviceaccounts", "system:serviceaccounts:kube-system", "system:authenticated"]
+    },
+    "object": {
+      "kind": "Deployment",
+      "apiVersion": "apps/v1",
+      "metadata": {
+        "name": "nginx-felix",
+        "namespace": "default",
+        "selfLink": "/apis/apps/v1/namespaces/default/deployments/nginx-felix",
+        "uid": "e69a4a25-0f19-462b-b933-6348796c9b4a",
+        "resourceVersion": "153568",
+        "generation": 1,
+        "creationTimestamp": "2020-08-12T13:07:48Z",
+        "labels": {
+          "app": "nginx"
+        },
+        "annotations": {
+          "deployment.kubernetes.io/revision": "1",
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"nginx\"},\"name\":\"nginx-felix\",\"namespace\":\"default\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"nginx\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"nginx\"}},\"spec\":{\"containers\":[{\"image\":\"nginx:1.14.2\",\"name\":\"nginx\",\"ports\":[{\"containerPort\":80}]}]}}}}\n"
+        },
+        "managedFields": [{
+          "manager": "kube-controller-manager",
+          "operation": "Update",
+          "apiVersion": "apps/v1",
+          "time": "2020-08-12T13:07:48Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                "f:deployment.kubernetes.io/revision": {}
+              }
+            },
+            "f:status": {
+              "f:conditions": {
+                ".": {},
+                "k:{\"type\":\"Available\"}": {
+                  ".": {},
+                  "f:lastTransitionTime": {},
+                  "f:lastUpdateTime": {},
+                  "f:message": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Progressing\"}": {
+                  ".": {},
+                  "f:lastTransitionTime": {},
+                  "f:lastUpdateTime": {},
+                  "f:message": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                }
+              },
+              "f:observedGeneration": {},
+              "f:replicas": {},
+              "f:unavailableReplicas": {},
+              "f:updatedReplicas": {}
+            }
+          }
+        }, {
+          "manager": "kubectl",
+          "operation": "Update",
+          "apiVersion": "apps/v1",
+          "time": "2020-08-12T13:07:48Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                ".": {},
+                "f:kubectl.kubernetes.io/last-applied-configuration": {}
+              },
+              "f:labels": {
+                ".": {},
+                "f:app": {}
+              }
+            },
+            "f:spec": {
+              "f:progressDeadlineSeconds": {},
+              "f:replicas": {},
+              "f:revisionHistoryLimit": {},
+              "f:selector": {
+                "f:matchLabels": {
+                  ".": {},
+                  "f:app": {}
+                }
+              },
+              "f:strategy": {
+                "f:rollingUpdate": {
+                  ".": {},
+                  "f:maxSurge": {},
+                  "f:maxUnavailable": {}
+                },
+                "f:type": {}
+              },
+              "f:template": {
+                "f:metadata": {
+                  "f:labels": {
+                    ".": {},
+                    "f:app": {}
+                  }
+                },
+                "f:spec": {
+                  "f:containers": {
+                    "k:{\"name\":\"nginx\"}": {
+                      ".": {},
+                      "f:image": {},
+                      "f:imagePullPolicy": {},
+                      "f:name": {},
+                      "f:ports": {
+                        ".": {},
+                        "k:{\"containerPort\":80,\"protocol\":\"TCP\"}": {
+                          ".": {},
+                          "f:containerPort": {},
+                          "f:protocol": {}
+                        }
+                      },
+                      "f:resources": {},
+                      "f:terminationMessagePath": {},
+                      "f:terminationMessagePolicy": {}
+                    }
+                  },
+                  "f:dnsPolicy": {},
+                  "f:restartPolicy": {},
+                  "f:schedulerName": {},
+                  "f:securityContext": {},
+                  "f:terminationGracePeriodSeconds": {}
+                }
+              }
+            }
+          }
+        }]
+      },
+      "spec": {
+        "replicas": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "nginx"
+          }
+        },
+        "template": {
+          "metadata": {
+            "creationTimestamp": null,
+            "labels": {
+              "app": "nginx"
+            }
+          },
+          "spec": {
+            "containers": [{
+              "name": "nginx",
+              "image": "nginx:1.14.2",
+              "ports": [{
+                "containerPort": 80,
+                "protocol": "TCP"
+              }],
+              "resources": {},
+              "terminationMessagePath": "/dev/termination-log",
+              "terminationMessagePolicy": "File",
+              "imagePullPolicy": "IfNotPresent"
+            }],
+            "restartPolicy": "Always",
+            "terminationGracePeriodSeconds": 30,
+            "dnsPolicy": "ClusterFirst",
+            "securityContext": {},
+            "schedulerName": "default-scheduler"
+          }
+        },
+        "strategy": {
+          "type": "RollingUpdate",
+          "rollingUpdate": {
+            "maxUnavailable": "25%",
+            "maxSurge": "25%"
+          }
+        },
+        "revisionHistoryLimit": 10,
+        "progressDeadlineSeconds": 600
+      },
+      "status": {
+        "observedGeneration": 1,
+        "replicas": 1,
+        "updatedReplicas": 1,
+        "unavailableReplicas": 1,
+        "conditions": [{
+          "type": "Available",
+          "status": "False",
+          "lastUpdateTime": "2020-08-12T13:07:48Z",
+          "lastTransitionTime": "2020-08-12T13:07:48Z",
+          "reason": "MinimumReplicasUnavailable",
+          "message": "Deployment does not have minimum availability."
+        }, {
+          "type": "Progressing",
+          "status": "True",
+          "lastUpdateTime": "2020-08-12T13:07:48Z",
+          "lastTransitionTime": "2020-08-12T13:07:48Z",
+          "reason": "ReplicaSetUpdated",
+          "message": "ReplicaSet \"nginx-felix-6b474476c4\" is progressing."
+        }]
+      }
+    },
+    "oldObject": {
+      "kind": "Deployment",
+      "apiVersion": "apps/v1",
+      "metadata": {
+        "name": "nginx-felix",
+        "namespace": "default",
+        "uid": "e69a4a25-0f19-462b-b933-6348796c9b4a",
+        "resourceVersion": "153568",
+        "generation": 1,
+        "creationTimestamp": "2020-08-12T13:07:48Z",
+        "labels": {
+          "app": "nginx"
+        },
+        "annotations": {
+          "deployment.kubernetes.io/revision": "1",
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"nginx\"},\"name\":\"nginx-felix\",\"namespace\":\"default\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"nginx\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"nginx\"}},\"spec\":{\"containers\":[{\"image\":\"nginx:1.14.2\",\"name\":\"nginx\",\"ports\":[{\"containerPort\":80}]}]}}}}\n"
+        }
+      },
+      "spec": {
+        "replicas": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "nginx"
+          }
+        },
+        "template": {
+          "metadata": {
+            "creationTimestamp": null,
+            "labels": {
+              "app": "nginx"
+            }
+          },
+          "spec": {
+            "containers": [{
+              "name": "nginx",
+              "image": "nginx:1.14.2",
+              "ports": [{
+                "containerPort": 80,
+                "protocol": "TCP"
+              }],
+              "resources": {},
+              "terminationMessagePath": "/dev/termination-log",
+              "terminationMessagePolicy": "File",
+              "imagePullPolicy": "IfNotPresent"
+            }],
+            "restartPolicy": "Always",
+            "terminationGracePeriodSeconds": 30,
+            "dnsPolicy": "ClusterFirst",
+            "securityContext": {},
+            "schedulerName": "default-scheduler"
+          }
+        },
+        "strategy": {
+          "type": "RollingUpdate",
+          "rollingUpdate": {
+            "maxUnavailable": "25%",
+            "maxSurge": "25%"
+          }
+        },
+        "revisionHistoryLimit": 10,
+        "progressDeadlineSeconds": 600
+      },
+      "status": {
+        "observedGeneration": 1,
+        "unavailableReplicas": 1,
+        "conditions": [{
+          "type": "Progressing",
+          "status": "True",
+          "lastUpdateTime": "2020-08-12T13:07:48Z",
+          "lastTransitionTime": "2020-08-12T13:07:48Z",
+          "reason": "NewReplicaSetCreated",
+          "message": "Created new replica set \"nginx-felix-6b474476c4\""
+        }, {
+          "type": "Available",
+          "status": "False",
+          "lastUpdateTime": "2020-08-12T13:07:48Z",
+          "lastTransitionTime": "2020-08-12T13:07:48Z",
+          "reason": "MinimumReplicasUnavailable",
+          "message": "Deployment does not have minimum availability."
+        }]
+      }
+    },
+    "dryRun": false,
+    "options": {
+      "kind": "UpdateOptions",
+      "apiVersion": "meta.k8s.io/v1"
+    }
+  }
+}, {
+  "kind": "AdmissionReview",
+  "apiVersion": "admission.k8s.io/v1",
+  "request": {
+    "uid": "cbcc3025-9586-42c5-b8c9-3ee644fbf19b",
+    "kind": {
+      "group": "",
+      "version": "v1",
+      "kind": "Pod"
+    },
+    "resource": {
+      "group": "",
+      "version": "v1",
+      "resource": "pods"
+    },
+    "subResource": "status",
+    "requestKind": {
+      "group": "",
+      "version": "v1",
+      "kind": "Pod"
+    },
+    "requestResource": {
+      "group": "",
+      "version": "v1",
+      "resource": "pods"
+    },
+    "requestSubResource": "status",
+    "name": "nginx-felix-6b474476c4-khn4w",
+    "namespace": "default",
+    "operation": "UPDATE",
+    "userInfo": {
+      "username": "system:node:minikube",
+      "groups": ["system:nodes", "system:authenticated"]
+    },
+    "object": {
+      "kind": "Pod",
+      "apiVersion": "v1",
+      "metadata": {
+        "name": "nginx-felix-6b474476c4-khn4w",
+        "generateName": "nginx-felix-6b474476c4-",
+        "namespace": "default",
+        "uid": "b12ebf5c-7cb7-49bd-9029-f2d784873b46",
+        "resourceVersion": "153571",
+        "creationTimestamp": "2020-08-12T13:07:48Z",
+        "labels": {
+          "app": "nginx",
+          "pod-template-hash": "6b474476c4"
+        },
+        "ownerReferences": [{
+          "apiVersion": "apps/v1",
+          "kind": "ReplicaSet",
+          "name": "nginx-felix-6b474476c4",
+          "uid": "91877a24-d8b2-4ef1-b08d-124f9b5544d8",
+          "controller": true,
+          "blockOwnerDeletion": true
+        }],
+        "managedFields": [{
+          "manager": "kube-controller-manager",
+          "operation": "Update",
+          "apiVersion": "v1",
+          "time": "2020-08-12T13:07:48Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:generateName": {},
+              "f:labels": {
+                ".": {},
+                "f:app": {},
+                "f:pod-template-hash": {}
+              },
+              "f:ownerReferences": {
+                ".": {},
+                "k:{\"uid\":\"91877a24-d8b2-4ef1-b08d-124f9b5544d8\"}": {
+                  ".": {},
+                  "f:apiVersion": {},
+                  "f:blockOwnerDeletion": {},
+                  "f:controller": {},
+                  "f:kind": {},
+                  "f:name": {},
+                  "f:uid": {}
+                }
+              }
+            },
+            "f:spec": {
+              "f:containers": {
+                "k:{\"name\":\"nginx\"}": {
+                  ".": {},
+                  "f:image": {},
+                  "f:imagePullPolicy": {},
+                  "f:name": {},
+                  "f:ports": {
+                    ".": {},
+                    "k:{\"containerPort\":80,\"protocol\":\"TCP\"}": {
+                      ".": {},
+                      "f:containerPort": {},
+                      "f:protocol": {}
+                    }
+                  },
+                  "f:resources": {},
+                  "f:terminationMessagePath": {},
+                  "f:terminationMessagePolicy": {}
+                }
+              },
+              "f:dnsPolicy": {},
+              "f:enableServiceLinks": {},
+              "f:restartPolicy": {},
+              "f:schedulerName": {},
+              "f:securityContext": {},
+              "f:terminationGracePeriodSeconds": {}
+            }
+          }
+        }, {
+          "manager": "kubelet",
+          "operation": "Update",
+          "apiVersion": "v1",
+          "time": "2020-08-12T13:07:48Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:status": {
+              "f:conditions": {
+                "k:{\"type\":\"ContainersReady\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:message": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Initialized\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Ready\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:message": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                }
+              },
+              "f:containerStatuses": {},
+              "f:hostIP": {},
+              "f:startTime": {}
+            }
+          }
+        }]
+      },
+      "spec": {
+        "volumes": [{
+          "name": "default-token-cwz2h",
+          "secret": {
+            "secretName": "default-token-cwz2h",
+            "defaultMode": 420
+          }
+        }],
+        "containers": [{
+          "name": "nginx",
+          "image": "nginx:1.14.2",
+          "ports": [{
+            "containerPort": 80,
+            "protocol": "TCP"
+          }],
+          "resources": {},
+          "volumeMounts": [{
+            "name": "default-token-cwz2h",
+            "readOnly": true,
+            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+          }],
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File",
+          "imagePullPolicy": "IfNotPresent"
+        }],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst",
+        "serviceAccountName": "default",
+        "serviceAccount": "default",
+        "nodeName": "minikube",
+        "securityContext": {},
+        "schedulerName": "default-scheduler",
+        "tolerations": [{
+          "key": "node.kubernetes.io/not-ready",
+          "operator": "Exists",
+          "effect": "NoExecute",
+          "tolerationSeconds": 300
+        }, {
+          "key": "node.kubernetes.io/unreachable",
+          "operator": "Exists",
+          "effect": "NoExecute",
+          "tolerationSeconds": 300
+        }],
+        "priority": 0,
+        "enableServiceLinks": true
+      },
+      "status": {
+        "phase": "Pending",
+        "conditions": [{
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2020-08-12T13:07:48Z"
+        }, {
+          "type": "Ready",
+          "status": "False",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2020-08-12T13:07:48Z",
+          "reason": "ContainersNotReady",
+          "message": "containers with unready status: [nginx]"
+        }, {
+          "type": "ContainersReady",
+          "status": "False",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2020-08-12T13:07:48Z",
+          "reason": "ContainersNotReady",
+          "message": "containers with unready status: [nginx]"
+        }, {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2020-08-12T13:07:48Z"
+        }],
+        "hostIP": "192.168.99.137",
+        "startTime": "2020-08-12T13:07:48Z",
+        "containerStatuses": [{
+          "name": "nginx",
+          "state": {
+            "waiting": {
+              "reason": "ContainerCreating"
+            }
+          },
+          "lastState": {},
+          "ready": false,
+          "restartCount": 0,
+          "image": "nginx:1.14.2",
+          "imageID": "",
+          "started": false
+        }],
+        "qosClass": "BestEffort"
+      }
+    },
+    "oldObject": {
+      "kind": "Pod",
+      "apiVersion": "v1",
+      "metadata": {
+        "name": "nginx-felix-6b474476c4-khn4w",
+        "generateName": "nginx-felix-6b474476c4-",
+        "namespace": "default",
+        "uid": "b12ebf5c-7cb7-49bd-9029-f2d784873b46",
+        "resourceVersion": "153571",
+        "creationTimestamp": "2020-08-12T13:07:48Z",
+        "labels": {
+          "app": "nginx",
+          "pod-template-hash": "6b474476c4"
+        },
+        "ownerReferences": [{
+          "apiVersion": "apps/v1",
+          "kind": "ReplicaSet",
+          "name": "nginx-felix-6b474476c4",
+          "uid": "91877a24-d8b2-4ef1-b08d-124f9b5544d8",
+          "controller": true,
+          "blockOwnerDeletion": true
+        }]
+      },
+      "spec": {
+        "volumes": [{
+          "name": "default-token-cwz2h",
+          "secret": {
+            "secretName": "default-token-cwz2h",
+            "defaultMode": 420
+          }
+        }],
+        "containers": [{
+          "name": "nginx",
+          "image": "nginx:1.14.2",
+          "ports": [{
+            "containerPort": 80,
+            "protocol": "TCP"
+          }],
+          "resources": {},
+          "volumeMounts": [{
+            "name": "default-token-cwz2h",
+            "readOnly": true,
+            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+          }],
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File",
+          "imagePullPolicy": "IfNotPresent"
+        }],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst",
+        "serviceAccountName": "default",
+        "serviceAccount": "default",
+        "nodeName": "minikube",
+        "securityContext": {},
+        "schedulerName": "default-scheduler",
+        "tolerations": [{
+          "key": "node.kubernetes.io/not-ready",
+          "operator": "Exists",
+          "effect": "NoExecute",
+          "tolerationSeconds": 300
+        }, {
+          "key": "node.kubernetes.io/unreachable",
+          "operator": "Exists",
+          "effect": "NoExecute",
+          "tolerationSeconds": 300
+        }],
+        "priority": 0,
+        "enableServiceLinks": true
+      },
+      "status": {
+        "phase": "Pending",
+        "conditions": [{
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2020-08-12T13:07:48Z"
+        }],
+        "qosClass": "BestEffort"
+      }
+    },
+    "dryRun": false,
+    "options": {
+      "kind": "UpdateOptions",
+      "apiVersion": "meta.k8s.io/v1"
+    }
+  }
+}, {
+  "kind": "AdmissionReview",
+  "apiVersion": "admission.k8s.io/v1",
+  "request": {
+    "uid": "3a91eb85-a7fc-49d1-ad17-447ae3305b88",
+    "kind": {
+      "group": "",
+      "version": "v1",
+      "kind": "Pod"
+    },
+    "resource": {
+      "group": "",
+      "version": "v1",
+      "resource": "pods"
+    },
+    "subResource": "status",
+    "requestKind": {
+      "group": "",
+      "version": "v1",
+      "kind": "Pod"
+    },
+    "requestResource": {
+      "group": "",
+      "version": "v1",
+      "resource": "pods"
+    },
+    "requestSubResource": "status",
+    "name": "nginx-felix-6b474476c4-khn4w",
+    "namespace": "default",
+    "operation": "UPDATE",
+    "userInfo": {
+      "username": "system:node:minikube",
+      "groups": ["system:nodes", "system:authenticated"]
+    },
+    "object": {
+      "kind": "Pod",
+      "apiVersion": "v1",
+      "metadata": {
+        "name": "nginx-felix-6b474476c4-khn4w",
+        "generateName": "nginx-felix-6b474476c4-",
+        "namespace": "default",
+        "uid": "b12ebf5c-7cb7-49bd-9029-f2d784873b46",
+        "resourceVersion": "153575",
+        "creationTimestamp": "2020-08-12T13:07:48Z",
+        "labels": {
+          "app": "nginx",
+          "pod-template-hash": "6b474476c4"
+        },
+        "ownerReferences": [{
+          "apiVersion": "apps/v1",
+          "kind": "ReplicaSet",
+          "name": "nginx-felix-6b474476c4",
+          "uid": "91877a24-d8b2-4ef1-b08d-124f9b5544d8",
+          "controller": true,
+          "blockOwnerDeletion": true
+        }],
+        "managedFields": [{
+          "manager": "kube-controller-manager",
+          "operation": "Update",
+          "apiVersion": "v1",
+          "time": "2020-08-12T13:07:48Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:generateName": {},
+              "f:labels": {
+                ".": {},
+                "f:app": {},
+                "f:pod-template-hash": {}
+              },
+              "f:ownerReferences": {
+                ".": {},
+                "k:{\"uid\":\"91877a24-d8b2-4ef1-b08d-124f9b5544d8\"}": {
+                  ".": {},
+                  "f:apiVersion": {},
+                  "f:blockOwnerDeletion": {},
+                  "f:controller": {},
+                  "f:kind": {},
+                  "f:name": {},
+                  "f:uid": {}
+                }
+              }
+            },
+            "f:spec": {
+              "f:containers": {
+                "k:{\"name\":\"nginx\"}": {
+                  ".": {},
+                  "f:image": {},
+                  "f:imagePullPolicy": {},
+                  "f:name": {},
+                  "f:ports": {
+                    ".": {},
+                    "k:{\"containerPort\":80,\"protocol\":\"TCP\"}": {
+                      ".": {},
+                      "f:containerPort": {},
+                      "f:protocol": {}
+                    }
+                  },
+                  "f:resources": {},
+                  "f:terminationMessagePath": {},
+                  "f:terminationMessagePolicy": {}
+                }
+              },
+              "f:dnsPolicy": {},
+              "f:enableServiceLinks": {},
+              "f:restartPolicy": {},
+              "f:schedulerName": {},
+              "f:securityContext": {},
+              "f:terminationGracePeriodSeconds": {}
+            }
+          }
+        }, {
+          "manager": "kubelet",
+          "operation": "Update",
+          "apiVersion": "v1",
+          "time": "2020-08-12T13:07:49Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:status": {
+              "f:conditions": {
+                "k:{\"type\":\"ContainersReady\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Initialized\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Ready\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:status": {},
+                  "f:type": {}
+                }
+              },
+              "f:containerStatuses": {},
+              "f:hostIP": {},
+              "f:phase": {},
+              "f:podIP": {},
+              "f:podIPs": {
+                ".": {},
+                "k:{\"ip\":\"172.17.0.9\"}": {
+                  ".": {},
+                  "f:ip": {}
+                }
+              },
+              "f:startTime": {}
+            }
+          }
+        }]
+      },
+      "spec": {
+        "volumes": [{
+          "name": "default-token-cwz2h",
+          "secret": {
+            "secretName": "default-token-cwz2h",
+            "defaultMode": 420
+          }
+        }],
+        "containers": [{
+          "name": "nginx",
+          "image": "nginx:1.14.2",
+          "ports": [{
+            "containerPort": 80,
+            "protocol": "TCP"
+          }],
+          "resources": {},
+          "volumeMounts": [{
+            "name": "default-token-cwz2h",
+            "readOnly": true,
+            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+          }],
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File",
+          "imagePullPolicy": "IfNotPresent"
+        }],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst",
+        "serviceAccountName": "default",
+        "serviceAccount": "default",
+        "nodeName": "minikube",
+        "securityContext": {},
+        "schedulerName": "default-scheduler",
+        "tolerations": [{
+          "key": "node.kubernetes.io/not-ready",
+          "operator": "Exists",
+          "effect": "NoExecute",
+          "tolerationSeconds": 300
+        }, {
+          "key": "node.kubernetes.io/unreachable",
+          "operator": "Exists",
+          "effect": "NoExecute",
+          "tolerationSeconds": 300
+        }],
+        "priority": 0,
+        "enableServiceLinks": true
+      },
+      "status": {
+        "phase": "Running",
+        "conditions": [{
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2020-08-12T13:07:48Z"
+        }, {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2020-08-12T13:07:49Z"
+        }, {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2020-08-12T13:07:49Z"
+        }, {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2020-08-12T13:07:48Z"
+        }],
+        "hostIP": "192.168.99.137",
+        "podIP": "172.17.0.9",
+        "podIPs": [{
+          "ip": "172.17.0.9"
+        }],
+        "startTime": "2020-08-12T13:07:48Z",
+        "containerStatuses": [{
+          "name": "nginx",
+          "state": {
+            "running": {
+              "startedAt": "2020-08-12T13:07:49Z"
+            }
+          },
+          "lastState": {},
+          "ready": true,
+          "restartCount": 0,
+          "image": "nginx:1.14.2",
+          "imageID": "docker-pullable://nginx@sha256:f7988fb6c02e0ce69257d9bd9cf37ae20a60f1df7563c3a2a6abe24160306b8d",
+          "containerID": "docker://0dfe2942642a7710a4fa3d66d3a4796543072ddd2f6cab30be759b5a55f8ebf1",
+          "started": true
+        }],
+        "qosClass": "BestEffort"
+      }
+    },
+    "oldObject": {
+      "kind": "Pod",
+      "apiVersion": "v1",
+      "metadata": {
+        "name": "nginx-felix-6b474476c4-khn4w",
+        "generateName": "nginx-felix-6b474476c4-",
+        "namespace": "default",
+        "uid": "b12ebf5c-7cb7-49bd-9029-f2d784873b46",
+        "resourceVersion": "153575",
+        "creationTimestamp": "2020-08-12T13:07:48Z",
+        "labels": {
+          "app": "nginx",
+          "pod-template-hash": "6b474476c4"
+        },
+        "ownerReferences": [{
+          "apiVersion": "apps/v1",
+          "kind": "ReplicaSet",
+          "name": "nginx-felix-6b474476c4",
+          "uid": "91877a24-d8b2-4ef1-b08d-124f9b5544d8",
+          "controller": true,
+          "blockOwnerDeletion": true
+        }]
+      },
+      "spec": {
+        "volumes": [{
+          "name": "default-token-cwz2h",
+          "secret": {
+            "secretName": "default-token-cwz2h",
+            "defaultMode": 420
+          }
+        }],
+        "containers": [{
+          "name": "nginx",
+          "image": "nginx:1.14.2",
+          "ports": [{
+            "containerPort": 80,
+            "protocol": "TCP"
+          }],
+          "resources": {},
+          "volumeMounts": [{
+            "name": "default-token-cwz2h",
+            "readOnly": true,
+            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+          }],
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File",
+          "imagePullPolicy": "IfNotPresent"
+        }],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst",
+        "serviceAccountName": "default",
+        "serviceAccount": "default",
+        "nodeName": "minikube",
+        "securityContext": {},
+        "schedulerName": "default-scheduler",
+        "tolerations": [{
+          "key": "node.kubernetes.io/not-ready",
+          "operator": "Exists",
+          "effect": "NoExecute",
+          "tolerationSeconds": 300
+        }, {
+          "key": "node.kubernetes.io/unreachable",
+          "operator": "Exists",
+          "effect": "NoExecute",
+          "tolerationSeconds": 300
+        }],
+        "priority": 0,
+        "enableServiceLinks": true
+      },
+      "status": {
+        "phase": "Pending",
+        "conditions": [{
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2020-08-12T13:07:48Z"
+        }, {
+          "type": "Ready",
+          "status": "False",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2020-08-12T13:07:48Z",
+          "reason": "ContainersNotReady",
+          "message": "containers with unready status: [nginx]"
+        }, {
+          "type": "ContainersReady",
+          "status": "False",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2020-08-12T13:07:48Z",
+          "reason": "ContainersNotReady",
+          "message": "containers with unready status: [nginx]"
+        }, {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2020-08-12T13:07:48Z"
+        }],
+        "hostIP": "192.168.99.137",
+        "startTime": "2020-08-12T13:07:48Z",
+        "containerStatuses": [{
+          "name": "nginx",
+          "state": {
+            "waiting": {
+              "reason": "ContainerCreating"
+            }
+          },
+          "lastState": {},
+          "ready": false,
+          "restartCount": 0,
+          "image": "nginx:1.14.2",
+          "imageID": "",
+          "started": false
+        }],
+        "qosClass": "BestEffort"
+      }
+    },
+    "dryRun": false,
+    "options": {
+      "kind": "UpdateOptions",
+      "apiVersion": "meta.k8s.io/v1"
+    }
+  }
+}, {
+  "kind": "AdmissionReview",
+  "apiVersion": "admission.k8s.io/v1",
+  "request": {
+    "uid": "ada0714c-183b-484d-a486-da7ca32dcc2d",
+    "kind": {
+      "group": "apps",
+      "version": "v1",
+      "kind": "Deployment"
+    },
+    "resource": {
+      "group": "apps",
+      "version": "v1",
+      "resource": "deployments"
+    },
+    "subResource": "status",
+    "requestKind": {
+      "group": "apps",
+      "version": "v1",
+      "kind": "Deployment"
+    },
+    "requestResource": {
+      "group": "apps",
+      "version": "v1",
+      "resource": "deployments"
+    },
+    "requestSubResource": "status",
+    "name": "nginx-felix",
+    "namespace": "default",
+    "operation": "UPDATE",
+    "userInfo": {
+      "username": "system:serviceaccount:kube-system:deployment-controller",
+      "uid": "06b6b99f-439a-461e-8578-23220e10b57a",
+      "groups": ["system:serviceaccounts", "system:serviceaccounts:kube-system", "system:authenticated"]
+    },
+    "object": {
+      "kind": "Deployment",
+      "apiVersion": "apps/v1",
+      "metadata": {
+        "name": "nginx-felix",
+        "namespace": "default",
+        "selfLink": "/apis/apps/v1/namespaces/default/deployments/nginx-felix",
+        "uid": "e69a4a25-0f19-462b-b933-6348796c9b4a",
+        "resourceVersion": "153573",
+        "generation": 1,
+        "creationTimestamp": "2020-08-12T13:07:48Z",
+        "labels": {
+          "app": "nginx"
+        },
+        "annotations": {
+          "deployment.kubernetes.io/revision": "1",
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"nginx\"},\"name\":\"nginx-felix\",\"namespace\":\"default\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"nginx\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"nginx\"}},\"spec\":{\"containers\":[{\"image\":\"nginx:1.14.2\",\"name\":\"nginx\",\"ports\":[{\"containerPort\":80}]}]}}}}\n"
+        },
+        "managedFields": [{
+          "manager": "kubectl",
+          "operation": "Update",
+          "apiVersion": "apps/v1",
+          "time": "2020-08-12T13:07:48Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                ".": {},
+                "f:kubectl.kubernetes.io/last-applied-configuration": {}
+              },
+              "f:labels": {
+                ".": {},
+                "f:app": {}
+              }
+            },
+            "f:spec": {
+              "f:progressDeadlineSeconds": {},
+              "f:replicas": {},
+              "f:revisionHistoryLimit": {},
+              "f:selector": {
+                "f:matchLabels": {
+                  ".": {},
+                  "f:app": {}
+                }
+              },
+              "f:strategy": {
+                "f:rollingUpdate": {
+                  ".": {},
+                  "f:maxSurge": {},
+                  "f:maxUnavailable": {}
+                },
+                "f:type": {}
+              },
+              "f:template": {
+                "f:metadata": {
+                  "f:labels": {
+                    ".": {},
+                    "f:app": {}
+                  }
+                },
+                "f:spec": {
+                  "f:containers": {
+                    "k:{\"name\":\"nginx\"}": {
+                      ".": {},
+                      "f:image": {},
+                      "f:imagePullPolicy": {},
+                      "f:name": {},
+                      "f:ports": {
+                        ".": {},
+                        "k:{\"containerPort\":80,\"protocol\":\"TCP\"}": {
+                          ".": {},
+                          "f:containerPort": {},
+                          "f:protocol": {}
+                        }
+                      },
+                      "f:resources": {},
+                      "f:terminationMessagePath": {},
+                      "f:terminationMessagePolicy": {}
+                    }
+                  },
+                  "f:dnsPolicy": {},
+                  "f:restartPolicy": {},
+                  "f:schedulerName": {},
+                  "f:securityContext": {},
+                  "f:terminationGracePeriodSeconds": {}
+                }
+              }
+            }
+          }
+        }, {
+          "manager": "kube-controller-manager",
+          "operation": "Update",
+          "apiVersion": "apps/v1",
+          "time": "2020-08-12T13:07:50Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                "f:deployment.kubernetes.io/revision": {}
+              }
+            },
+            "f:status": {
+              "f:availableReplicas": {},
+              "f:conditions": {
+                ".": {},
+                "k:{\"type\":\"Available\"}": {
+                  ".": {},
+                  "f:lastTransitionTime": {},
+                  "f:lastUpdateTime": {},
+                  "f:message": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Progressing\"}": {
+                  ".": {},
+                  "f:lastTransitionTime": {},
+                  "f:lastUpdateTime": {},
+                  "f:message": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                }
+              },
+              "f:observedGeneration": {},
+              "f:readyReplicas": {},
+              "f:replicas": {},
+              "f:updatedReplicas": {}
+            }
+          }
+        }]
+      },
+      "spec": {
+        "replicas": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "nginx"
+          }
+        },
+        "template": {
+          "metadata": {
+            "creationTimestamp": null,
+            "labels": {
+              "app": "nginx"
+            }
+          },
+          "spec": {
+            "containers": [{
+              "name": "nginx",
+              "image": "nginx:1.14.2",
+              "ports": [{
+                "containerPort": 80,
+                "protocol": "TCP"
+              }],
+              "resources": {},
+              "terminationMessagePath": "/dev/termination-log",
+              "terminationMessagePolicy": "File",
+              "imagePullPolicy": "IfNotPresent"
+            }],
+            "restartPolicy": "Always",
+            "terminationGracePeriodSeconds": 30,
+            "dnsPolicy": "ClusterFirst",
+            "securityContext": {},
+            "schedulerName": "default-scheduler"
+          }
+        },
+        "strategy": {
+          "type": "RollingUpdate",
+          "rollingUpdate": {
+            "maxUnavailable": "25%",
+            "maxSurge": "25%"
+          }
+        },
+        "revisionHistoryLimit": 10,
+        "progressDeadlineSeconds": 600
+      },
+      "status": {
+        "observedGeneration": 1,
+        "replicas": 1,
+        "updatedReplicas": 1,
+        "readyReplicas": 1,
+        "availableReplicas": 1,
+        "conditions": [{
+          "type": "Available",
+          "status": "True",
+          "lastUpdateTime": "2020-08-12T13:07:50Z",
+          "lastTransitionTime": "2020-08-12T13:07:50Z",
+          "reason": "MinimumReplicasAvailable",
+          "message": "Deployment has minimum availability."
+        }, {
+          "type": "Progressing",
+          "status": "True",
+          "lastUpdateTime": "2020-08-12T13:07:50Z",
+          "lastTransitionTime": "2020-08-12T13:07:48Z",
+          "reason": "NewReplicaSetAvailable",
+          "message": "ReplicaSet \"nginx-felix-6b474476c4\" has successfully progressed."
+        }]
+      }
+    },
+    "oldObject": {
+      "kind": "Deployment",
+      "apiVersion": "apps/v1",
+      "metadata": {
+        "name": "nginx-felix",
+        "namespace": "default",
+        "uid": "e69a4a25-0f19-462b-b933-6348796c9b4a",
+        "resourceVersion": "153573",
+        "generation": 1,
+        "creationTimestamp": "2020-08-12T13:07:48Z",
+        "labels": {
+          "app": "nginx"
+        },
+        "annotations": {
+          "deployment.kubernetes.io/revision": "1",
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"nginx\"},\"name\":\"nginx-felix\",\"namespace\":\"default\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"nginx\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"nginx\"}},\"spec\":{\"containers\":[{\"image\":\"nginx:1.14.2\",\"name\":\"nginx\",\"ports\":[{\"containerPort\":80}]}]}}}}\n"
+        }
+      },
+      "spec": {
+        "replicas": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "nginx"
+          }
+        },
+        "template": {
+          "metadata": {
+            "creationTimestamp": null,
+            "labels": {
+              "app": "nginx"
+            }
+          },
+          "spec": {
+            "containers": [{
+              "name": "nginx",
+              "image": "nginx:1.14.2",
+              "ports": [{
+                "containerPort": 80,
+                "protocol": "TCP"
+              }],
+              "resources": {},
+              "terminationMessagePath": "/dev/termination-log",
+              "terminationMessagePolicy": "File",
+              "imagePullPolicy": "IfNotPresent"
+            }],
+            "restartPolicy": "Always",
+            "terminationGracePeriodSeconds": 30,
+            "dnsPolicy": "ClusterFirst",
+            "securityContext": {},
+            "schedulerName": "default-scheduler"
+          }
+        },
+        "strategy": {
+          "type": "RollingUpdate",
+          "rollingUpdate": {
+            "maxUnavailable": "25%",
+            "maxSurge": "25%"
+          }
+        },
+        "revisionHistoryLimit": 10,
+        "progressDeadlineSeconds": 600
+      },
+      "status": {
+        "observedGeneration": 1,
+        "replicas": 1,
+        "updatedReplicas": 1,
+        "unavailableReplicas": 1,
+        "conditions": [{
+          "type": "Available",
+          "status": "False",
+          "lastUpdateTime": "2020-08-12T13:07:48Z",
+          "lastTransitionTime": "2020-08-12T13:07:48Z",
+          "reason": "MinimumReplicasUnavailable",
+          "message": "Deployment does not have minimum availability."
+        }, {
+          "type": "Progressing",
+          "status": "True",
+          "lastUpdateTime": "2020-08-12T13:07:48Z",
+          "lastTransitionTime": "2020-08-12T13:07:48Z",
+          "reason": "ReplicaSetUpdated",
+          "message": "ReplicaSet \"nginx-felix-6b474476c4\" is progressing."
+        }]
+      }
+    },
+    "dryRun": false,
+    "options": {
+      "kind": "UpdateOptions",
+      "apiVersion": "meta.k8s.io/v1"
+    }
+  }
+}]
