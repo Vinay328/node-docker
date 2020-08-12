@@ -78,7 +78,7 @@ app.post('/validate', (req, res) => {
         console.log(e);
     }
     if (errorObject) {
-        res.status(403).json(errorObject);
+        res.status(200).json(errorObject);
     } else {
         res.status(200).json({
             "apiVersion": "admission.k8s.io/v1beta1",
@@ -92,7 +92,7 @@ app.post('/validate', (req, res) => {
 });
 
 https.createServer(options, app).listen(PORT, () => {
-    console.log("phase5 proper code experiments");
+    console.log("phase5.1 proper code experiments");
     console.log("server starting on port : " + PORT);
 });
 
