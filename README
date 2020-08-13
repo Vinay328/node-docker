@@ -12,4 +12,6 @@ kubectl logs vinay-78c6b6ffcb-vt9p4 | grep nginx-vinay
 
 kubectl exec -it nginx-felix-6b474476c4-khn4w -- bin/bash
 
+http://dota.io/.well-known/acme-challenge/jKyKYSQ_BCjdZg-w8JwS3S9c9W5k2Cm1YJxjIhCBAe8
+
 

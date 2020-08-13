@@ -6,19 +6,22 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
 
-const key = fs.readFileSync(__dirname + '/keys/my-private.key');
+/*const key = fs.readFileSync(__dirname + '/keys/my-private.key');
 const cert = fs.readFileSync(__dirname + '/keys/my-certificate.crt');
 const options = {
     passphrase: "vina",
     key: key,
     cert: cert
-};
+};*/
 
 // Constants
-const PORT = 8080;
+const PORT = 80;
 
 // App
 const app = express();
+
+app.use(express.static(__dirname + '/static', { dotfiles: 'allow' }));
+
 const EXPRESS_LOG_FILE = process.env.EXPRESS_LOG_FILE || './access.log';
 
 const accessLogStream = fs.createWriteStream(`${EXPRESS_LOG_FILE}`, {flags: 'a'});
@@ -104,8 +107,12 @@ app.post('/validate', (req, res) => {
     }
 });
 
+/*
 https.createServer(options, app).listen(PORT, () => {
     console.log("phase final proper code experiments");
     console.log("server starting on port : " + PORT);
 });
+*/
+
+app.listen(PORT)
 
