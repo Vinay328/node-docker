@@ -12,4 +12,19 @@ kubectl logs vinay-78c6b6ffcb-vt9p4 | grep nginx-vinay
 
 kubectl exec -it nginx-felix-6b474476c4-khn4w -- bin/bash
 
+openssl genrsa -aes128 -out my-private.key 2048
+
+openssl rsa -pubout -in my-private.key -out my-public.key
+
+openssl req -new -key my-private.key -out my-request.csr
+
+cat my-certificate.crt | base64 | tr -d '\n'
+
+docker build . -t vinay328/nodedocker:1.0.1
+
+docker push vinay328/nodedocker:1.0.1
+
+
+
+
 

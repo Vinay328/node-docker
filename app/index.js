@@ -9,7 +9,7 @@ const compression = require('compression');
 const key = fs.readFileSync(__dirname + '/keys/my-private.key');
 const cert = fs.readFileSync(__dirname + '/keys/my-certificate.crt');
 const options = {
-    passphrase: "vina",
+    passphrase: "hope",
     key: key,
     cert: cert
 };
@@ -105,7 +105,7 @@ app.post('/validate', (req, res) => {
 });
 
 https.createServer(options, app).listen(PORT, () => {
-    console.log("phase final proper code experiments");
+    console.log("phase final proper code experiments - 365");
     console.log("server starting on port : " + PORT);
 });
 

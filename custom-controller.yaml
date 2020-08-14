@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vinay
+  name: node
   namespace: default
   labels:
-    name: vinay
+    app: node
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: vinay
+      app: node
   template:
     metadata:
       labels:
-        name: vinay
+        app: node
     spec:
       containers:
-        - name: vinay
-          image: vinay328/nodedocker:1.0.0
+        - name: node-webhook
+          image: vinay328/nodedocker:1.0.1
           ports:
             - containerPort: 8080
