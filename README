@@ -22,7 +22,15 @@ cat my-certificate.crt | base64 | tr -d '\n'
 
 docker build . -t vinay328/nodedocker:1.0.1
 
-docker push vinay328/nodedocker:1.0.1
+docker push vinay328/nodedocker:1.0.
+--------------------------------------------------------------------------------
+demo
+
+kubectl delete validatingwebhookconfiguration --all
+
+kubectl exec -it nginx-dota-6b474476c4-ptlvh -- bin/bash
+
+telepresence --verbose --swap-deployment node --expose 8080:8080 --run-shell --method inject-tcp
 
 
 

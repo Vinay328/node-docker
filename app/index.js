@@ -16,6 +16,7 @@ const options = {
 
 // Constants
 const PORT = 8080;
+const AUDIT_FLAG = true;
 
 // App
 const app = express();
@@ -63,6 +64,12 @@ function validate(body) {
             }
         }
 
+        if (AUDIT_FLAG) {
+            console.log(`WARNING: user=${body.request.userInfo.username} has run a shell in to the pod -> ${body.request.name}`);
+        } else {
+            console.log(`INFO: user=${body.request.userInfo.username} has attempted to run a shell in to the pod -> ${body.request.name}`)
+        }
+
     } else if (body.request.operation == "CREATE" && body.request.object.kind == "Deployment" && body.request.object.spec.replicas < 2) {
         errorObject = {
             "apiVersion": "admission.k8s.io/v1",
@@ -76,19 +83,34 @@ function validate(body) {
                 }
             }
         }
+
+        if(AUDIT_FLAG) {
+            console.log(`WARNING: Every deployment should have at least 2 replicas`)
+        } else {
+            console.log("INFO: Every deployment should have at least 2 replicas")
+        };
+
     }
+
+    if(AUDIT_FLAG) {
+        errorObject = null;
+    }
+
     return errorObject;
 }
 
 app.post('/validate', (req, res) => {
+
     console.log("VALIDATE REQUEST CALLED " + new Date().toString());
-    res.set('Content-Type', 'application/json')
+
+    res.set('Content-Type', 'application/json');
+
     let errorObject;
     try {
-        console.log(JSON.stringify(req.body));
+       // console.log(JSON.stringify(req.body));
         errorObject = validate(req.body);
     } catch (e) {
-        console.log(e);
+       console.log(e);
     }
     if (errorObject) {
         res.status(200).json(errorObject);

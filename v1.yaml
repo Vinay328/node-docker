@@ -33,5 +33,6 @@ webhooks:
         resources: ["deployments", "pods/*"]
         scope: "Namespaced"
     failurePolicy: Fail
+    timeoutSeconds: 30
     admissionReviewVersions: ["v1", "v1beta1"]
     sideEffects: None
